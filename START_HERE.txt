@@ -1,0 +1,21 @@
+PG WORKBENCH — ACCOUNTS + ADMIN DASHBOARD (VERCEL)
+
+1. Extract this ZIP and open ACCOUNT_SETUP.md first.
+2. Create a Supabase project; run supabase/setup.sql once in its SQL Editor.
+3. Set up email/SMTP and redirect URLs as described in ACCOUNT_SETUP.md.
+4. Replace your GitHub app source with this folder's contents.
+5. Add the four Vercel environment variables from ACCOUNT_SETUP.md.
+6. Deploy with Vite, npm ci, npm run build and output directory dist.
+7. Sign up with your own email; confirm it; run the provided SQL to make
+   your own account administrator. Reload to see Learner management.
+
+Includes sign-in, self-sign-up, password reset, admin-created invitations,
+cloud progress per username and all existing lessons and practice datasets.
+Bold footer: Powered by Muhammad Naveed Arshad
+
+Before replacing the old anonymous app, export any existing learner progress
+and custom SQL. Import progress only after signing in to the intended account.
+
+This is source ready for configuration and deployment. No live Supabase project,
+SMTP setup, Vercel deployment or default administrator password is included.
+The previous offline Laptop ZIP remains a separate edition.

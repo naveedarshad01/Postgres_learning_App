@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: learner
+      POSTGRES_PASSWORD: ${PG_PRACTICE_PASSWORD:?Copy .env.example to .env and choose a password}
+      POSTGRES_DB: pg_workbench
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - pg_practice_data:/var/lib/postgresql/data
+      - ./public/database/academy.sql:/docker-entrypoint-initdb.d/01-academy.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U learner -d pg_workbench"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  pg_practice_data:
